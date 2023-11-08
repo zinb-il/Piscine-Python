@@ -1,9 +1,14 @@
-ft_list = ["Hello", "World!"]
-ft_tuple = ("Hello", "Morocco!")
-ft_set = {"Hello", "Benguerir!"}
-ft_dict = {"Hello" : "1337 Benguerir!"}
+ft_list = ["Hello", "tata!"]
+ft_tuple = ("Hello", "toto!")
+ft_set = {"Hello", "tutu!"}
+ft_dict = {"Hello" : "titi!"}
 
-ft_set = set(ft_set)
+ft_list[1] = "World!"
+ft_tuple = ("Hello", "Morocco!")
+ft_set.remove("tutu!")
+ft_set.add("Benguerir!")
+ft_dict["Hello"] = "1337 Benguerir!"
+
 
 print(ft_list)
 print(ft_tuple)
