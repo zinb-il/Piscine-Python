@@ -17,6 +17,6 @@ progressbar every time a value is requested.'''
         lp = i * l // mx
         ls = " " * (l - lp)
         ind = " " * (len(str(mx)) - len(str(i)))
-        print(f'\r{ps}{p}%|{c * lp}{ls}| {ind}{i}/{mx}', end='\r')
+        print(f'{ps}{p}%|{c * lp}{ls}| {ind}{i}/{mx}', end='\r')
         if i == mx: print()
         yield i
