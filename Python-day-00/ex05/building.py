@@ -7,7 +7,7 @@ def ft_count(s: str) -> any:
     ponctuation, chiffres et espaces. minuscules, des caractères
     de ponctuation, des chiffres et des espaces'''
 
-    p ="!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+    p = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
     print(f"The text contains {len(s)} characters:")
     print(f"{len([i for i in s if i.isupper()])} upper letters")
