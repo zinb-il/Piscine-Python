@@ -4,12 +4,13 @@ from Loading import ft_tqdm
 
 
 # print(tqdm.__doc__)
-for elem in ft_tqdm(range(0,10)):
-    sleep(0.5)
+for elem in ft_tqdm(range(0,5)):
+    sleep(1)
 print()
-for elem in tqdm(range(0,10)):
-    sleep(0.5)
+for elem in tqdm(range(0,5)):
+    sleep(3)
 print()
+
 
 # colors = ["Blue","Green","Yellow","White","Gray","Black"]
 # for x in tqdm(colors):

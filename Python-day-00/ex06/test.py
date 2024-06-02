@@ -1,4 +1,4 @@
-from ft_filter import ft_filter
+# from ft_filter import ft_filter
 
 # Test1
 # def check(letter) :
@@ -10,17 +10,23 @@ from ft_filter import ft_filter
 # letters = ['u', 'a', 'q', 'c', 'i', 'd', 'z', 'p', 'e']
 # f1 = filter(check, letters)
 # f2 = ft_filter(check, letters)
+# print("ok" if [*f1] == [*f2] else 'Baaad')
+# print([*f1], [*f2], sep='\n')
 
 
 # Test 2
 # nums = [5, 10, 23, 64, 42, 53, 93, 2, 0, -14, 6, -22, -13]
 # f1 = filter(lambda p : p%2 != 0, nums)
 # f2 = ft_filter(lambda p : p%2 != 0, nums)
+# print("ok" if [*f1] == [*f2] else 'Baaad')
+# print([*f1], [*f2], sep='\n')
 
 # Test 3
 # nums = [5, -23, "", True, False, 0, 0.0, {}, []]
 # f1 = filter(None, nums)
 # f2 = ft_filter(None, nums)
+# print([*f1], [*f2], sep='\n')
+# print("ok" if [*f1] == [*f2] else 'Baaad')
 
 # Test 4
 # books = [{"Title":"Angels and Demons", "Author":"Dan Brown", "Price":500},
@@ -91,31 +97,32 @@ from ft_filter import ft_filter
 #     print("\033[32m       ok\033[0m")
 
 #     print("\033[32mAll tests passed\033[0m")
+# test_filter()
 
 
 # test_filterstring()
 
-def test_filterstring():
-    test_cases = [
-        ("Hello World", 4, ["Hello", "World"]),
-        ("Python is fun", 2, ["Python", "fun"]),
-        ("", 0, []),
-        ("abc def ghi", 1, ["abc", "def", "ghi"]),
-        ("One Two Three", 4, ["Three"]),
-        ("Zero Nani Three", 5, []),
-    ]
-    passed_tests = 0
-    for text, n, expected_result in test_cases:
-        filtered_words = \
-            list(ft_filter(lambda word: len(word) > n, text.split()))
-        if filtered_words == expected_result:
-            passed_tests += 1
-            print("\033[32m       ok\033[0m")
-        else:
-            print("\033[31mTest failed for input '{}', {}: Expected {}, \
-            got {}\033[0m".format(text, n, expected_result, filtered_words))
-    print("\033[32m{} out of {} \
-    tests passed\033[0m".format(passed_tests, len(test_cases)))
+# def test_filterstring():
+#     test_cases = [
+#         ("Hello World", 4, ["Hello", "World"]),
+#         ("Python is fun", 2, ["Python", "fun"]),
+#         ("", 0, []),
+#         ("abc def ghi", 1, ["abc", "def", "ghi"]),
+#         ("One Two Three", 4, ["Three"]),
+#         ("Zero Nani Three", 5, []),
+#     ]
+#     passed_tests = 0
+#     for text, n, expected_result in test_cases:
+#         filtered_words = \
+#             list(ft_filter(lambda word: len(word) > n, text.split()))
+#         if filtered_words == expected_result:
+#             passed_tests += 1
+#             print("\033[32m       ok\033[0m")
+#         else:
+#             print("\033[31mTest failed for input '{}', {}: Expected {}, \
+#             got {}\033[0m".format(text, n, expected_result, filtered_words))
+#     print("\033[32m{} out of {} \
+#     tests passed\033[0m".format(passed_tests, len(test_cases)))
 
 
-test_filterstring()
+# test_filterstring()
