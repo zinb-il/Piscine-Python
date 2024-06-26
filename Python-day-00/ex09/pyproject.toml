@@ -7,9 +7,9 @@ name = "ft_package"
 version = "0.0.1"
 description = "A simple example package"
 authors = [
-    {nam="ziloughm", email="ziloughm@42.fr"}
+    {name="ziloughm", email="ziloughm@42.fr"}
     ]
-license = { file="LICENSE" }
+license = { text="MIT" }
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = []
