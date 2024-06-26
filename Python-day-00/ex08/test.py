@@ -3,8 +3,6 @@ from tqdm import tqdm
 from Loading import ft_tqdm
 
 
-
-
 # print(tqdm.__doc__)
 
 # # Test1
@@ -26,7 +24,7 @@ print()
 
 
 # # Test3
-colors = ["Blue","Green","Yellow","White","Gray","Black"]
+colors = ["Blue", "Green", "Yellow", "White", "Gray", "Black"]
 
 for x in tqdm(colors):
     sleep(1)

@@ -2,10 +2,12 @@ import os
 import time
 import sys
 
+
 def ft_hide_cursor():
     '''Disable blinking cursor in control window'''
     sys.stdout.write("\033[?25l")
     sys.stdout.flush()
+
 
 def ft_show_cursor():
     '''Disable blinking cursor in control window'''
