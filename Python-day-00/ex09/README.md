@@ -1,6 +1,6 @@
 # ft_package
 
-`ft_package` est un Python package qui compte les occurrences de l'élément cible dans la table itérative.
+`ft_package` is a Python package that provides a function to count occurrences of an element in an iterable.
 
 ## Build
 
