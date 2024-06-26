@@ -4,27 +4,36 @@
 
 ## Build
 
-using 'setup.py'
+`using 'setup.py'`
 
 ```
 python3 setup.py sdist bdist_wheel
 ```
 
-using 'pyproject.toml'
+`using 'pyproject.toml'`
 
+For Linux:
 ```
 python3 -m pip install --upgrade build
 python3 -m build
+```
+For Windows:
+```
+py -m pip install --upgrade build
+py -m build
 ```
 
 ## Install
 
 ```
 pip install ./dist/ft_package-0.0.1.tar.gz
+```
+Or 
+```
 pip install ./dist/ft_package-0.0.1-py3-none-any.whl
 ```
 
-## Display
+## More informations about the package
 
 ```
 pip show -v ft_package
