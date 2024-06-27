@@ -3,7 +3,7 @@ from tqdm import tqdm
 from Loading import ft_tqdm
 
 
-# print(tqdm.__doc__)
+# # print(tqdm.__doc__)
 
 # # Test1
 for elem in ft_tqdm(range(10)):
@@ -31,3 +31,12 @@ for x in tqdm(colors):
 
 for x in ft_tqdm(colors):
     sleep(1)
+    
+
+# # Test4
+for elem in ft_tqdm(range(333)):
+    sleep(0.005)
+print()
+for elem in tqdm(range(333)):
+    sleep(0.005)
+print()

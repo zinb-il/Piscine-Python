@@ -1,6 +1,6 @@
-# from ft_filter import ft_filter
+from ft_filter import ft_filter
 
-# Test1
+# # Test1
 # def check(letter) :
 #   list_of_vowels = ['a', 'e', 'i', 'o', 'u']
 #   if letter in list_of_vowels:
@@ -14,21 +14,21 @@
 # print([*f1], [*f2], sep='\n')
 
 
-# Test 2
+# # # Test 2
 # nums = [5, 10, 23, 64, 42, 53, 93, 2, 0, -14, 6, -22, -13]
 # f1 = filter(lambda p : p%2 != 0, nums)
 # f2 = ft_filter(lambda p : p%2 != 0, nums)
 # print("ok" if [*f1] == [*f2] else 'Baaad')
 # print([*f1], [*f2], sep='\n')
 
-# Test 3
+# # # Test 3
 # nums = [5, -23, "", True, False, 0, 0.0, {}, []]
 # f1 = filter(None, nums)
 # f2 = ft_filter(None, nums)
 # print([*f1], [*f2], sep='\n')
 # print("ok" if [*f1] == [*f2] else 'Baaad')
 
-# Test 4
+# # Test 4
 # books = [{"Title":"Angels and Demons", "Author":"Dan Brown", "Price":500},
 #    {"Title":"Gone Girl", "Author":"Gillian Flynn", "Price":730},
 #    {"Title":"The Silent Patient", "Author":"Alex Michaelidis", "Price":945},
@@ -45,6 +45,7 @@
 
 
 # print(filter.__doc__)
+# print()
 # print(ft_filter.__doc__)
 
 # print(type(f1))
@@ -57,7 +58,7 @@
 # print(list(f2))
 
 
-# Online Test
+# # Online Test
 
 # def is_even(num):
 #     return num % 2 == 0
@@ -100,7 +101,7 @@
 # test_filter()
 
 
-# test_filterstring()
+# # test_filterstring()
 
 # def test_filterstring():
 #     test_cases = [

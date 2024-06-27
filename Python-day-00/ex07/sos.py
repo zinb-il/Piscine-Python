@@ -46,7 +46,7 @@ def main():
         s = str(sys.argv[1]).upper()
         for i in s:
             assert i in NESTED_MORSE.keys(), errmsg
-        s = "".join([NESTED_MORSE.get(j) for j in s])
+        s = "".join([NESTED_MORSE.get(j) for j in s])[:-1]
         print(s)
     except (AssertionError, ValueError):
         print(f"AssertionError: {errmsg}")
