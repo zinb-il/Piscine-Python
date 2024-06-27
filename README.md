@@ -1,4 +1,4 @@
-# Formation Python pour la Science des Données
+# Python Data Science Training
 
 Ce dépôt contient les exercices pour la formation Python en Science des Données. Les exercices couvrent les concepts fondamentaux de la programmation Python avec un accent sur les applications en science des données.
 
