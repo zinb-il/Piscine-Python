@@ -35,17 +35,14 @@ Chaque exercice est contenu dans son propre répertoire (ex00, ex01, etc.). Navi
 Training Piscine Python for data science – 00 
  
 
-### Ex00 : 
+### <ins>Ex00 : </ins>
  
 Cet exercice a pour but de connaître les différents types de données non-primitives en Python et de savoir lesquelles sont mutables ou immuables. 
 
-Liste (ft_list) : Les listes sont mutables, ce qui permet de modifier directement un élément en l'indexant. 
-
-Tuple (ft_tuple) : Les tuples sont immuables, vous devez donc créer un nouveau tuple avec les valeurs souhaitées. 
-
-Set (ft_set) : Les sets sont mutables, mais comme il s'agit de collections non ordonnées, vous devez remplacer l'ensemble par un nouvel ensemble contenant les valeurs souhaitées. 
-
-Dictionnaire (ft_dict) : Les dictionnaires sont mutables, ce qui permet de modifier directement la valeur associée à une clé. 
+* Liste (ft_list) : Les listes sont mutables, ce qui permet de modifier directement un élément en l'indexant. 
+* Tuple (ft_tuple) : Les tuples sont immuables, vous devez donc créer un nouveau tuple avec les valeurs souhaitées. 
+* Set (ft_set) : Les sets sont mutables, mais comme il s'agit de collections non ordonnées, vous devez remplacer l'ensemble par un nouvel ensemble contenant les valeurs souhaitées. 
+* Dictionnaire (ft_dict) : Les dictionnaires sont mutables, ce qui permet de modifier directement la valeur associée à une clé. 
 
  
 ### Ex01 : 
