@@ -43,10 +43,10 @@ def main():
                         "8": "---.. ",
                         "9": "----. "}
         assert len(sys.argv) == 2, errmsg
-        s = str(sys.argv[1]).upper().strip()
+        s = str(sys.argv[1]).upper()
         for i in s:
             assert i in NESTED_MORSE.keys(), errmsg
-        s = "".join([NESTED_MORSE.get(j) for j in s]).strip()
+        s = "".join([NESTED_MORSE.get(j) for j in s])[:-1]
         print(s)
     except (AssertionError, ValueError):
         print(f"AssertionError: {errmsg}")

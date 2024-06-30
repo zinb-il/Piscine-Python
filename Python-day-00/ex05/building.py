@@ -1,18 +1,19 @@
 import sys
+import string as str
 
 
 def ft_count(s: str) -> any:
-    '''cette fonction prend en argument une seule chaîne et
-    affiche la somme de ses caractères majuscules, minuscules,
-    ponctuation, chiffres et espaces. minuscules, des caractères
-    de ponctuation, des chiffres et des espaces'''
+    '''Cette fonction prend en argument une seule chaîne et \
+affiche la somme de ses caractères, la somme de ses caractères \
+majuscules, minuscules, caractères de ponctuation, \
+chiffres et espaces'''
 
-    p = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+    # p = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
     print(f"The text contains {len(s)} characters:")
     print(f"{len([i for i in s if i.isupper()])} upper letters")
     print(f"{len([i for i in s if i.islower()])} lower letters")
-    print(f"{len([i for i in s if i in p])} punctuation marks")
+    print(f"{len([i for i in s if i in str.punctuation])} punctuation marks")
     print(f"{len([i for i in s if i.isspace()])} spaces")
     print(f"{len([i for i in s if i.isdigit()])} digits")
 
@@ -26,7 +27,6 @@ def main():
         else:
             s = sys.argv[1]
         ft_count(s)
-        print(ft_count.__doc__)
     except AssertionError as err:
         print(f"AssertionError: {err}")
     except Exception as err:
