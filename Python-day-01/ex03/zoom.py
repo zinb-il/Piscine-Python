@@ -1,86 +1,59 @@
-from load_image import ft_load
-from PIL import Image, ImageOps
 import numpy as np
+from PIL import Image
+from load_image import ft_load
+from matplotlib import pyplot as plt
 
-def ft_zoom(img_arr: np.ndarray, factor: int | float,
-            start_px: tuple = (0, 0)) -> np.ndarray:
 
+def ft_zoom(img: np.ndarray) -> np.ndarray:
     """
-    ft_zoom(path: str, zfactor: int | float, start_pixel: tuple) -> np.ndarray
+    This function zooms and crops an image from the center
+    and converts it from RGB to Grayscale mode.
 
-    NOTE: start_pixel is an optional argument. Default value is (0, 0).
+    Args:
+        img (np.ndarray): 3D array of RGB colors of the image
 
-    Return a zoomed img arr based on the zfactor(zoom in factor)
-    and start pixel (if specified).
+    Returns:
+        np.ndarray: numpy array of the new image data
     """
-
     try:
-        if img_arr is None:
-            raise AssertionError("img_arr is None")
-
-        if not isinstance(img_arr, np.ndarray):
-            raise AssertionError("expecting img_arr to be a numpy array")
-
-        if not isinstance(factor, (int, float)):
-            raise AssertionError("expecting factor to be an int")
-
-        if not isinstance(start_px, tuple):
-            raise AssertionError("expecting start_px to be a tuple")
-
-        if not all([x >= 0 for x in start_px]):
-            raise AssertionError("expecting start_px consists of " +
-                                 "positive values only")
-
-        if factor < 1:
-            raise AssertionError("expecting factor to be greater than 0")
-
-        # get the width and height of the img_arr, tuple unpacking operation
-        (height, width, _) = img_arr.shape
-
-        # calculate the new height and width based on the zoom factor
-        new_dimension = min(height, width)
-        new_height = int(new_dimension / factor)
-        new_width = int(new_dimension / factor)
-
-        left, upper = start_px
-        right = left + new_width
-        lower = upper + new_height
-
-        if right > width or lower > height:
-            raise AssertionError("zoomed region exceeds image dimension")
-
-        # if i just do this -> [:, :, 0], i'm selecting all the values from
-        # the first channel along the dimension. this will then become a
-        # single list. if i do [:, :, 0:1], same but this will retain the
-        # 3rd dimension
-        zoomed_img_arr.show()
-        zoomed_img_arr = img_arr[upper:lower, left:right, 0:1]
-        print(f"New shape after slicing: {zoomed_img_arr.shape}" +
-              f" or ({zoomed_img_arr.shape[0]}, {zoomed_img_arr.shape[1]})")
-        return zoomed_img_arr
-    except Exception as e:
-        print(f"[ERROR]: {e}")
+        assert img is not None and isinstance(img, np.ndarray), "Your \
+image sould be a 3D list of rgb colors"
+        assert img.ndim == 3 and img.size, "Your image sould be a 3D list"
+        z_f, w, h = 1.2, 400, 400
+        n_w, n_h = int(img.shape[1] * z_f), int(img.shape[0] * z_f)
+        s_x, s_y = (n_w - w) // 2,  h // 2
+        img = Image.fromarray(img, 'RGB')
+        img = img.resize((n_h, n_w))
+        img = np.array(img)
+        img = img[s_y: s_y + h, s_x: s_x + w]
+        img = np.mean(img, axis=2, keepdims=True).astype(np.uint8)
+        n_w, n_h = img.shape[:2]
+        print(f"New shape after slicing: {img.shape} or {(n_h, n_w)}")
+        return img
+    except AssertionError as err:
+        print(f"AssertionError: {err}")
+    except Exception as err:
+        print(f"ExceptionError: {err}")
 
 
 def main():
     try:
         path = 'animal.jpeg'
-        # x, y = 400, 400
-        old_img = ft_load(path)
-        zoom = ft_zoom(old_img, 2, (0, 0))
-        # img = Image.fromarray(old_img, 'RGB')
-        # img = img.resize((img.size[0], img.size[1]))
-        # left = abs(img.size[0] - x) // 2
-        # top = abs(img.size[1] - y) // 2
-        # right = left + x
-        # bottom = top + y
-        # img = img.crop((left, top, right, bottom))
-        # img = img.resize((400, 400))
-        # print(old_img)
-        # nimg = np.array(img)
-        # print(f"New shape after slicing: {nimg.shape} or {(nimg.shape[0], nimg.shape[1])}")
-        # print(nimg)
-        # img.show()
+        # #Load the image
+        img = ft_load(path)
+        print(img)
+        # #Zoom, crop and convert to grayscale image
+        z_img = ft_zoom(img)
+        print(z_img)
+        ###############################################
+        # #Display the image using PIl library
+        img = Image.fromarray(z_img.squeeze(), 'L')
+        img.show()
+        ###############################################
+        # # Display the image
+        plt.imshow(z_img, cmap='gray')
+        plt.axis('on')
+        plt.show()
     except AssertionError as err:
         print(f"AssertionError: {err}")
     except Exception as err:
