@@ -19,8 +19,8 @@ def ft_crop(img: np.ndarray) -> np.ndarray:
         assert img is not None and isinstance(img, np.ndarray), "Your \
 image sould be a 3D list of rgb colors"
         assert img.ndim == 3 and img.size, "Your image sould be a 3D list"
-        n_w, n_h, w, h = img.shape[1], img.shape[0], 400, 400
-        s_x, s_y = (n_w - w) // 2, (n_h - h) // 2
+        w, h = 400, 400
+        s_x, s_y = (img.shape[1] - w) // 2, (img.shape[0] - h) // 2
         img = img[s_y: s_y + h, s_x: s_x + w]
         img = np.mean(img, axis=2, keepdims=True).astype(np.uint8)
         print(f"The shape of image is: {img.shape}")
@@ -46,8 +46,9 @@ def ft_rotate(img: np.ndarray) -> np.ndarray:
 image sould be a 3D list of rgb colors"
         assert img.ndim == 3 and img.size, "Your image sould be a 3D list"
         img = Image.fromarray(img.squeeze(), 'L')
-        img = img.transpose(Image.FLIP_TOP_BOTTOM)
+        img = img.transpose(Image.ROTATE_90)
         img = np.array(img)
+        print(f"New shape after Transpose: {img.shape}")
         return img
     except AssertionError as err:
         print(f"AssertionError: {err}")
@@ -64,9 +65,9 @@ def main():
         img = ft_rotate(img)
         print(img)
         # # Display the image
-        plt.imshow(img, cmap='gray')
-        plt.axis('on')
-        plt.show()
+        # plt.imshow(img, cmap='gray')
+        # plt.axis('on')
+        # plt.show()
     except AssertionError as err:
         print(f"AssertionError: {err}")
     except Exception as err:
