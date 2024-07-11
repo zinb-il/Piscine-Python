@@ -1,5 +1,4 @@
 import numpy as np
-from PIL import Image
 from load_image import ft_load
 from matplotlib import pyplot as plt
 
@@ -45,11 +44,10 @@ def ft_rotate(img: np.ndarray) -> np.ndarray:
         assert img is not None and isinstance(img, np.ndarray), "Your \
 image sould be a 3D list of rgb colors"
         assert img.ndim == 3 and img.size, "Your image sould be a 3D list"
-        img = Image.fromarray(img.squeeze(), 'L')
-        img = img.transpose(Image.ROTATE_90)
-        img = np.array(img)
-        print(f"New shape after Transpose: {img.shape}")
-        return img
+        w, h = len(img[0]), len(img)
+        rimg = np.array([[img[y][x][0] for y in range(h)] for x in range(w)])
+        print(f"New shape after Transpose: {rimg.shape}")
+        return rimg
     except AssertionError as err:
         print(f"AssertionError: {err}")
     except Exception as err:
@@ -59,13 +57,27 @@ image sould be a 3D list of rgb colors"
 def main():
     try:
         path = "animal.jpeg"
+        # Load the image
         img = ft_load(path)
-        img = ft_crop(img)
-        print(img)
-        img = ft_rotate(img)
-        print(img)
-        # # Display the image
+        # Crop the image
+        cimg = ft_crop(img)
+        print(cimg)
+        # Rotate the image
+        rimg = ft_rotate(cimg)
+        print(rimg)
+        # Display Only the rotate image
+        plt.imshow(rimg, cmap='gray')
+        plt.axis('on')
+        plt.show()
+        # # # Display Both images
+        # fig = plt.figure(figsize=(10, 20))
+        # fig.add_subplot(2, 1, 1)
         # plt.imshow(img, cmap='gray')
+        # plt.title("normal")
+        # plt.axis('on')
+        # fig.add_subplot(2, 1, 2)
+        # plt.imshow(rimg, cmap='gray')
+        # plt.title("Rotate")
         # plt.axis('on')
         # plt.show()
     except AssertionError as err:
