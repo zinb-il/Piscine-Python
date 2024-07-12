@@ -66,20 +66,21 @@ def main():
         rimg = ft_rotate(cimg)
         print(rimg)
         # Display Only the rotate image
-        plt.imshow(rimg, cmap='gray')
-        plt.axis('on')
-        plt.show()
-        # # # Display Both images
-        # fig = plt.figure(figsize=(10, 20))
-        # fig.add_subplot(2, 1, 1)
-        # plt.imshow(img, cmap='gray')
-        # plt.title("normal")
-        # plt.axis('on')
-        # fig.add_subplot(2, 1, 2)
         # plt.imshow(rimg, cmap='gray')
-        # plt.title("Rotate")
         # plt.axis('on')
         # plt.show()
+        ####################################
+        # # # Display Both images
+        fig = plt.figure(figsize=(10, 20))
+        fig.add_subplot(2, 1, 1)
+        plt.imshow(img, cmap='gray')
+        plt.title("normal")
+        plt.axis('on')
+        fig.add_subplot(2, 1, 2)
+        plt.imshow(rimg, cmap='gray')
+        plt.title("Rotate")
+        plt.axis('on')
+        plt.show()
     except AssertionError as err:
         print(f"AssertionError: {err}")
     except Exception as err:

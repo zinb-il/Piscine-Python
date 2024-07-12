@@ -1,4 +1,3 @@
-import numpy as np
 from load_image import ft_load
 from pimp_image import ft_invert
 from pimp_image import ft_red
@@ -6,7 +5,6 @@ from pimp_image import ft_green
 from pimp_image import ft_blue
 from pimp_image import ft_grey
 from matplotlib import pyplot as plt
-from array import array
 
 
 array = ft_load("landscape.jpg")
@@ -51,7 +49,7 @@ plt.title("Figure VIII.3: Blue")
 plt.axis('off')
 ##
 fig.add_subplot(3, 2, 6)
-plt.imshow(grey)
+plt.imshow(grey, cmap='gray')
 plt.title("Figure VIII.3: Grey")
 plt.axis('off')
 plt.show()

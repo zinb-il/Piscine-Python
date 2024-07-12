@@ -13,6 +13,8 @@ of weights and heights
         list[int | float]: list of BMI
     """
     try:
+        assert isinstance(w, list), "Weights must be a list datatype"
+        assert isinstance(h, list), "Heights must be a list datatype"
         h, w = np.array(h), np.array(w)
         assert h.dtype.kind in 'fi' and w.dtype.kind in 'fi', "Height and \
 weight must be integers or floats."
@@ -40,6 +42,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         list[bool]: bool values
     """
     try:
+        assert isinstance(bmi, list), "Your BMIS must be a list datatype"
         bmi = np.array(bmi)
         assert bmi.size, "Your list is empty"
         assert isinstance(limit, int), "The limit shoud be an integer value"

@@ -16,8 +16,9 @@ def main():
         # Test2
         print("\033[32m #Test2 \033[0m")
         print("\033[32m test with dic and tuple \033[0m")
-        print(give_bmi((4), (5)))
+        give_bmi((4), (5))
         give_bmi([], [])
+        give_bmi({'h':5}, {'h':5})
         give_bmi([1], [[1]])
         give_bmi([1, 4], ['l', 4])
         give_bmi([-9], [0])

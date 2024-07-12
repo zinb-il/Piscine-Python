@@ -8,5 +8,6 @@ try:
     # print(ft_load(1))
     # print(ft_load([1]))
     # print(ft_load(['ff']))
+    # print(ft_load('1'))
 except Exception as err:
     print(f"ExceptionError: {err}")

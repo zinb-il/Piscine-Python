@@ -47,8 +47,8 @@ def main():
         print(z_img)
         ###############################################
         # #Display the image using PIl library
-        img = Image.fromarray(z_img.squeeze(), 'L')
-        img.show()
+        # img = Image.fromarray(z_img.squeeze(), 'L')
+        # img.show()
         ###############################################
         # # Display the image
         plt.imshow(z_img, cmap='gray')
