@@ -14,7 +14,7 @@ or None if an error occ
     try:
         assert isinstance(path, str), "The path to the data should be string"
         assert path.lower().endswith(".csv"), "The supported extension is csv"
-        dt = pd.read_csv(path)
+        dt = pd.read_csv(path, index_col=False)
         print(f"Loading dataset of dimensions {dt.shape}")
         return dt
     except AssertionError as err:
