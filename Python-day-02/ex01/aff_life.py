@@ -4,19 +4,33 @@ from matplotlib import pyplot as plt
 
 
 def aff_life(dt: pd.DataFrame, country: str = 'Morocco'):
+    """this function 
+
+    Args:
+        dt (pd.DataFrame): _description_
+        country (str, optional): _description_. Defaults to 'Morocco'.
+    """
     try:
         assert isinstance(dt, pd.DataFrame), "The data should \
 be pd.DataFrame type"
         assert isinstance(country, str), "The name of the country should a str"
-        ds = pd.DataFrame(dt.T)
-        ds.columns = ds.iloc[0]
-        ds = ds[1:]
-        assert country in ds.columns, "This country doesn't existe in the file" 
-        ds[country].plot()
+        assert country in dt['country'].values, "This country doesn't existe in the file" 
+        # Methode 1
+        years = dt.columns[1:].values
+        life = dt[dt['country'] == country].iloc[0, 1:].values
+        plt.plot(years, life)
+        plt.xticks(range(0, len(years), 40), years[::40])
+        ############################
+        # Methode 2
+        # ds = pd.DataFrame(dt.T)
+        # ds.columns = ds.iloc[0]
+        # ds = ds[1:]
+        # ds[country].plot()
+        # plt.xticks(range(0, len(ds.index), 40), ds.index[::40])
+        ############################
         plt.title(f'{country.capitalize()} Life expectancy Projections')
         plt.xlabel('Year')
         plt.ylabel('Life expectancy')
-        plt.xticks(range(0, len(ds.index), 40), ds.index[::40])
         plt.show()
     except AssertionError as err:
         print(f"AssertionError: {err}")
