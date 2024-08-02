@@ -4,17 +4,20 @@ from matplotlib import pyplot as plt
 
 
 def aff_life(dt: pd.DataFrame, country: str = 'Morocco'):
-    """this function 
+    """this functiond plot the life expectancy for the specified country.
 
     Args:
-        dt (pd.DataFrame): _description_
-        country (str, optional): _description_. Defaults to 'Morocco'.
+        dt (pd.DataFrame): data frame to plot
+        country (str, optional): The country to filter and plot data for.\
+Defaults to 'Morocco'.
     """
     try:
         assert isinstance(dt, pd.DataFrame), "The data should \
 be pd.DataFrame type"
+
         assert isinstance(country, str), "The name of the country should a str"
-        assert country in dt['country'].values, "This country doesn't existe in the file" 
+        assert country in dt['country'].values, "This country \
+doesn't existe in the file"
         # Methode 1
         years = dt.columns[1:].values
         life = dt[dt['country'] == country].iloc[0, 1:].values
