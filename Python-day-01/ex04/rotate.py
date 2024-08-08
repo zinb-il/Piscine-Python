@@ -20,10 +20,10 @@ image sould be a 3D list of rgb colors"
         assert img.ndim == 3 and img.size, "Your image sould be a 3D list"
         w, h = 400, 400
         s_x, s_y = (img.shape[1] - w) // 2, (img.shape[0] - h) // 2
-        img = img[s_y: s_y + h, s_x: s_x + w]
-        img = np.mean(img, axis=2, keepdims=True).astype(np.uint8)
-        print(f"The shape of image is: {img.shape}")
-        return img
+        img1 = img[s_y: s_y + h, s_x: s_x + w]
+        img1 = np.mean(img1, axis=2, keepdims=True).astype(np.uint8)
+        print(f"The shape of image is: {img1.shape}")
+        return img1
     except AssertionError as err:
         print(f"AssertionError: {err}")
     except Exception as err:

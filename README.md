@@ -1,4 +1,4 @@
-# Piscine Python pour la Science des Données
+# Piscine Python pour DataScience
 
 ## Présentation
 

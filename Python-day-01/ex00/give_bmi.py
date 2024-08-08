@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def give_bmi(h: list[int | float], w: list[int | float]) -> list[int | float]:
+def give_bmi(he: list[int | float], we: list[int | float]) -> list[int | float]:
     """This function returns the BMI (Body Mass Index) of a list \
 of weights and heights
 
@@ -13,9 +13,9 @@ of weights and heights
         list[int | float]: list of BMI
     """
     try:
-        assert isinstance(w, list), "Weights must be a list datatype"
-        assert isinstance(h, list), "Heights must be a list datatype"
-        h, w = np.array(h), np.array(w)
+        assert isinstance(we, list), "Weights must be a list datatype"
+        assert isinstance(he, list), "Heights must be a list datatype"
+        h, w = np.array(he), np.array(we)
         assert h.dtype.kind in 'fi' and w.dtype.kind in 'fi', "Height and \
 weight must be integers or floats."
         assert h.shape == w.shape, "Height and weight list \

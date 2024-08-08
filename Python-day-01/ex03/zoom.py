@@ -22,14 +22,14 @@ image sould be a 3D list of rgb colors"
         z_f, w, h = 1.2, 400, 400
         n_w, n_h = int(img.shape[1] * z_f), int(img.shape[0] * z_f)
         s_x, s_y = (n_w - w) // 2,  h // 2
-        img = Image.fromarray(img, 'RGB')
-        img = img.resize((n_h, n_w))
-        img = np.array(img)
-        img = img[s_y: s_y + h, s_x: s_x + w]
-        img = np.mean(img, axis=2, keepdims=True).astype(np.uint8)
-        n_w, n_h = img.shape[:2]
-        print(f"New shape after slicing: {img.shape} or {(n_h, n_w)}")
-        return img
+        img1 = Image.fromarray(img, 'RGB')
+        img1 = img1.resize((n_h, n_w))
+        img1 = np.array(img1)
+        img1 = img1[s_y: s_y + h, s_x: s_x + w]
+        img1 = np.mean(img1, axis=2, keepdims=True).astype(np.uint8)
+        n_w, n_h = img1.shape[:2]
+        print(f"New shape after slicing: {img1.shape} or {(n_h, n_w)}")
+        return img1
     except AssertionError as err:
         print(f"AssertionError: {err}")
     except Exception as err:

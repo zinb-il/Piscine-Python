@@ -22,17 +22,13 @@ La formation est divisée en plusieurs exercices :
 - Python 3.10
 - Bibliothèques supplémentaires spécifiées dans les exercices individuels
 
-## Installation
-
-1. Clonez ce dépôt
-2. Installez les packages requis (le cas échéant) avec `pip install -r requirements.txt`
 
 ## Exécution des Exercices
 
 Chaque exercice est contenu dans son propre répertoire (ex00, ex01, etc.). Naviguez vers le répertoire de l'exercice et exécutez le script Python .
 
 # Exercices
-Training Piscine Python for data science – 00 
+Training Piscine Python for data science – 00 Starting
  
 
 ### <ins>Ex00 : </ins>

@@ -9,7 +9,7 @@ def load(path: str) -> pd.DataFrame | None:
 
     Returns:
         pd.DataFrame | None : the dataset as pandas object \
-or None if an error occ
+or None if an error occurs
     """
     try:
         assert isinstance(path, str), "The path to the data should be string"
