@@ -26,30 +26,30 @@ Chaque exercice est contenu dans son propre répertoire (ex00, ex01, etc.). Navi
 
 Training Piscine Python for data science – 01 Array
 
-### <ins>Ex00 : Give my BMI</ins>
+### <ins>Ex00 : </ins>
 
 Cet exercice vise à créer deux fonctions :
 
 - `give_bmi` : Calcule l'IMC à partir de listes de tailles et de poids.
 - `apply_limit` : Applique une limite à une liste d'IMC.
 
-### <ins>Ex01 : 2D array</ins>
+### <ins>Ex01 : </ins>
 
 L'objectif est de créer une fonction `slice_me` qui manipule un tableau 2D, affiche sa forme et retourne une version tronquée du tableau en fonction des arguments de début et de fin fournis.
 
-### <ins>Ex02 : Load my image</ins>
+### <ins>Ex02 : </ins>
 
 Développez une fonction `ft_load` qui charge une image, affiche son format et son contenu en pixels au format RGB. La gestion des formats JPG et JPEG est requise.
 
-### <ins>Ex03 : Zoom on me</ins>
+### <ins>Ex03 : </ins>
 
 Créez un programme qui charge l'image "animal.jpeg", affiche des informations sur celle-ci (taille, nombre de canaux, contenu des pixels) et effectue un zoom sur une partie de l'image.
 
-### <ins>Ex04 : Rotate me</ins>
+### <ins>Ex04 : </ins>
 
 Le programme doit charger l'image "animal.jpeg", en extraire une partie carrée, la transposer et afficher le résultat. La transposition doit être implémentée manuellement, sans utiliser de fonction de bibliothèque.
 
-### <ins>Ex05 : Pimp my image</ins>
+### <ins>Ex05 : </ins>
 
 Développez 5 fonctions pour appliquer différents filtres de couleur aux images :
 
