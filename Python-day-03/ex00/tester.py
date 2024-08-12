@@ -16,10 +16,12 @@ def main():
         print(Lyanna.__dict__)
         ###########################
         hodor = Character("hodor")
+        print(hodor)
     except AssertionError as err:
         print(f"AssertionError: {err}")
     except Exception as err:
         print(f"ExceptionError: {err}")
+
 
 if __name__ == "__main__":
     main()
