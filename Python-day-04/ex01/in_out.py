@@ -37,8 +37,30 @@ number should int or float"
 
 
 def outer(x: int | float, function) -> object:
+    """Create a closure that applies a function repeatedly to an initial value.
+
+    Args:
+        x (int | float): The initial value to start the sequence.
+        function (Callable[int | float]): A function to apply repeatedly.
+
+    Returns:
+        Callable[float]: function that when called, applies the given function
+        to the current value and returns the result.
+    """
     count = 0
 
     def inner() -> float:
-        return function(x)
+        """Apply the function to the current count and return the result.
+
+        This inner function maintains state between calls, applying the
+        outer function's `function` argument to `count` on each invocation.
+
+        Returns:
+            float: The result of applying the function to the current count.
+        """
+        nonlocal count
+        if not count:
+            count = x
+        count = function(count)
+        return count
     return inner

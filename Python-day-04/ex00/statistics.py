@@ -2,28 +2,28 @@ from typing import Any, Iterable
 
 
 def ft_len(lst: Iterable) -> int:
-    """this function claculate the length of a iterable
+    """Calculate the length of an iterable.
 
     Args:
-        Iterable: iterable object
+        lst (Iterable): The iterable object to measure.
 
     Returns:
-        int: the length of the list
+        int: The length of the iterable.
     """
     count = 0
-    for i in lst:
+    for _ in lst:
         count += 1
     return count
 
 
 def ft_sum(lst: list[float | int]) -> float:
-    """this function claculate the sum of a list of number
+    """Calculate the sum of a list of numbers.
 
     Args:
-        lst (list[float  |  int]): values
+        lst (list[float | int]): A list of numeric values.
 
     Returns:
-        float: the sum of the list
+        float: The sum of all values in the list.
     """
     count = 0
     for i in lst:
@@ -32,13 +32,13 @@ def ft_sum(lst: list[float | int]) -> float:
 
 
 def ft_sort(lst: list[float | int]) -> list[float | int]:
-    """this function sort a list using buble sort
+    """Sort a list of numbers using bubble sort algorithm.
 
     Args:
-        lst (list[float  |  int]): values
+        lst (list[float | int]): A list of numeric values to be sorted.
 
     Returns:
-        list[float | int]: the sorted list
+        list[float | int]: The sorted list in ascending order.
     """
     ch = False
     while not ch:
@@ -52,15 +52,14 @@ def ft_sort(lst: list[float | int]) -> list[float | int]:
 
 
 def ft_count(lst: list[float | int], n: float | int) -> int:
-    """this function  returns the number of times the specified element \
-appears in the list
+    """Count the number of occurrences of a specific element in the list.
 
     Args:
-        lst (list[float  |  int]): list to search in
-        n (float  |  int): number to serach number of times
+        lst (list[float | int]): The list to search in.
+        n (float | int): The value to count occurrences of.
 
     Returns:
-        int: the number of occourence
+        int: The number of times the specified element appears in the list.
     """
     count = 0
     for i in lst:
@@ -70,23 +69,25 @@ appears in the list
 
 
 def ft_mean(lst: list[float | int]) -> float:
-    """this function calculate the mean of a list of number
+    """Calculate the arithmetic mean of a list of numbers.
 
     Args:
-        lst (list[float  |  int]): values
+        lst (list[float | int]): A list of numeric values.
+
     Returns:
-        float: the mean
+        float: The arithmetic mean of the list.
     """
     return ft_sum(lst) / ft_len(lst)
 
 
 def ft_median(lst: list[float | int]) -> float:
-    """this function calculate the mean of a list of number
+    """Calculate the median of a list of numbers.
 
     Args:
-        lst (list[float  |  int]): values
+        lst (list[float | int]): A list of numeric values.
+
     Returns:
-        float: the median
+        float: The median value of the list.
     """
     lis = ft_sort([i for i in lst])
     median = lis[ft_len(lis) // 2]
@@ -96,29 +97,31 @@ def ft_median(lst: list[float | int]) -> float:
 
 
 def ft_quartile(lst: list[float | int]) -> list[int | float]:
-    """this function calculate the Quartile (25% and 75%) of a list of number
+    """Calculate the first (Q1) and third (Q3) quartiles of a list of numbers.
 
     Args:
-        lst (list[float  |  int]): values
+        lst (list[float | int]): A list of numeric values.
+
     Returns:
-        list[int | float] : value of q1 and q3
+        list[int | float]: A list containing [Q1, Q3].
     """
     lis = ft_sort([i for i in lst])
     eff = ft_sum([ft_count(lis, i) for i in set(lis)])
     q1 = eff / 4
-    q1 = int(q1) if int(eff / 4) == q1 else int(eff // 4 + 1)
+    q1 = int(q1) if int(q1) == q1 else int(eff // 4 + 1)
     q3 = eff / 4 * 3
-    q3 = int(q3) if int(eff / 4 * 3) == q3 else int(eff // 4 * 3 + 1)
+    q3 = int(q3) if int(q3) == q3 else int(eff // 4 * 3 + 1)
     return [float(lis[q1 - 1]), float(lis[q3 - 1])]
 
 
 def ft_var(lst: list[float | int]) -> float:
-    """this function calculate the varition of a list of number
+    """Calculate the variance of a list of numbers.
 
     Args:
-        lst (list[float  |  int]): values
+        lst (list[float | int]): A list of numeric values.
+
     Returns:
-        float: variation
+        float: The variance of the list.
     """
     lis = [i for i in lst]
     mean = ft_mean(lis)
@@ -127,23 +130,27 @@ def ft_var(lst: list[float | int]) -> float:
 
 
 def ft_std(lst: list[float | int]) -> float:
-    """this function calculate the Standard Deviation of a list of number
+    """Calculate the standard deviation of a list of numbers.
 
     Args:
-        lst (list[float  |  int]): values
+        lst (list[float | int]): A list of numeric values.
+
     Returns:
-        float: standard deviation
+        float: The standard deviation of the list.
     """
     return ft_var(lst) ** 0.5
 
 
 def ft_statistics(*args: Any, **kwargs: Any) -> None:
-    """This function calculates  Mean, Median,Quartile (25% and 75%), \
-Standard Deviation and Variance
+    """Calculate various statistical measures for a given set of numbers.
 
-        Args:
-            *args(tuple(int)): values
-            **kwargs(dictinnary{str}): operation to calculate
+    This function can compute mean, median, quartiles, \
+variance, and standard deviation.
+
+    Args:
+        *args: Variable length argument list of numeric values.
+        **kwargs: Keyword arguments specifying which operations to perform.
+            Valid keys are: "mean", "median", "quartile", "var", "std".
     """
     try:
         values = list(args)
