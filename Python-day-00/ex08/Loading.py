@@ -10,7 +10,7 @@ def ft_hide_cursor():
 
 
 def ft_show_cursor():
-    '''Disable blinking cursor in control window'''
+    '''Enable blinking cursor in control window'''
     sys.stdout.write("\033[?25h")
     sys.stdout.write("\n")
     sys.stdout.flush()
